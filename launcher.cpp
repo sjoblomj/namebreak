@@ -125,21 +125,6 @@ int main(int argc, char* argv[])
     bool virtualconsole = isvirtualconsole();
     string terminal = findterminal();
 
-    pid_t pid = getppid();
-    stringstream tmp0;
-    tmp0 << pid;
-
-    string tmp = "/proc/" + tmp0.str() + "/cmdline";
-    ifstream inputfile(tmp.c_str());  // Open the file
-    if(inputfile.is_open())               // Unable to read file.
-    {
-        if((char)inputfile.get() != '-')
-        {
-            cout << "Exiting\n";
-            exit(0);
-        }
-    }
-
     if(virtualconsole || !newterminal)
     {
         // Print info, and give the users 10 seconds to abort

@@ -18,7 +18,7 @@ $(EXECUTABLE): $(OBJECTS)
 clean:
 	rm *.o
 
-# To make the launcher:
+# To make the launcher: make launcher PASS=password
 launcher:
 ifndef PASS
 	$(error Password not provided)

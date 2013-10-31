@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+#eval spawn  kinit
+
+#set prompt ":|#|\\\$"
+#interact -o -nobuffer -re $prompt return
+
+eval spawn "ktupd 30"
+expect "Password:"
+send "[lindex $argv 0]\r"
+
+interact
+
